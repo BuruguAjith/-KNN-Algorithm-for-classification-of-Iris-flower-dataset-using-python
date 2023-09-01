@@ -1,0 +1,26 @@
+import pandas as pd
+iris = pd.read_csv('C:\\Users\\91809\\Downloads\\iris (1).csv')
+print(iris)
+iris.shape
+iris.describe()
+iris.head()
+import matplotlib.pyplot as plt
+iris.hist()
+plt.show()
+iris['species'].value_counts()
+import numpy as np
+species_name = {'Iris-versicolor':0,'Iris-virginica':1,'Iris-setosa':2}
+color = [species_name[item] for item in iris['species']]
+scatter = plt.scatter(iris['sepal_length'],iris['sepal_width'],c=color)
+plt.xlabel('Sepal Length (in cm)')
+plt.ylabel('Sepal Width (in cm)')
+plt.legend(handles = scatter.legend_elements()[0],labels=species_name)
+plt.show()
+species_name = {'Iris-versicolor':0,'Iris-virginica':1,'Iris-setosa':2}
+color = [species_name[item] for item in iris['species']]
+scatter = plt.scatter(iris['petal_length'],iris['petal_width'],c=color)
+plt.xlabel('Petal Length (in cm)')
+plt.ylabel('Petal Width (in cm)')
+plt.legend(handles = scatter.legend_elements()[0],labels=species_name)
+
+plt.show()
